@@ -5,7 +5,6 @@ b=a
 b[1]=99
 # print(b)
 # print(a)
-
 #copy
 # import  
 x=[1,2,3,4,5]

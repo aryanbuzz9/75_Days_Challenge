@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.zipy.ai/sdk/v1.0/zipy.min.umd.js" crossorigin="anonymous"></script> <script> window.zipy && window.zipy.init('af2c0c35');</script>
+  <meta charset="utf-8">
+  <title>Shiprocket</title>
+  <base href="/">
+  <meta charset="utf-8">
+   <meta http-equiv="Cache-control" content="no-cache">
+   <meta http-equiv="Expires" content="-1">
+   <link rel="preload" as="font">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+   <meta name="description" content="ShipRocket - eCommerce Shipping in India. An E-commerce logistics and courier aggregator that lets you ship at discounted rates. Automated shipping solutions for making shipping fast, secure and easy. Get Started Today.">
+   <meta name="keywords" content="app, responsive, angular, bootstrap, dashboard, admin">
+   <meta name="google-site-verification" content="NqayXOz7e66XKrVp5hur3OncgMPHTanwzVtMS72vLes" />
+   <title> Signup</title>
+   <link rel="icon" type="image/x-icon" href="{% static 'images/favicon1.jpg' %}">
+   <meta property="og:title" content="ShipRocket - Multi-channel Order, Inventory & Shipping Management Solution" />
+   <link rel="canonical" property="og:canonical" ng-href="{{ngMeta.canonical}}"/>
+   <meta property="og:description" content="ShipRocket - eCommerce Shipping in India. An E-commerce logistics and courier aggregator that lets you ship at discounted rates. Automated shipping solutions for making shipping fast, secure and easy. Get Started Today." />
+   <link rel="icon" href="sr_login/assets/images/shiprocket_favicon.png" type="image/gif" sizes="16x16">
+   <meta name="apple-itunes-app" content="app-id=1444055257">
+   <!-- Bootstrap styles-->
+   
+   <link rel="stylesheet" href="{% static 'signup.css' %}">
+
+   <script id='_webengage_script_tag' type='text/javascript'> 
+    var webengage;
+  ! function(w, e, b, n, g) {
+      function o(e, t) {
+          e[t[t.length - 1]] = function() {
+              r.__queue.push([t.join("."), arguments])
+          }
+      }
+      var i, s, r = w[b],
+          z = " ",
+          l = "init options track screen onReady".split(z),
+          a = "feedback survey notification".split(z),
+          c = "options render clear abort".split(z),
+          p = "Open Close Submit Complete View Click".split(z),
+          u = "identify login logout setAttribute".split(z);
+      if (!r || !r.__v) {
+          for (w[b] = r = {
+                  __queue: [],
+                  is_spa: 1, //Change this to 0 if you do not wish to use default SPA behaviour of WebEngage SDK
+                  __v: "6.0",
+                  user: {}
+              }, i = 0; i < l.length; i++) o(r, [l[i]]);
+          for (i = 0; i < a.length; i++) {
+              for (r[a[i]] = {}, s = 0; s < c.length; s++) o(r[a[i]], [a[i], c[s]]);
+              for (s = 0; s < p.length; s++) o(r[a[i]], [a[i], "on" + p[s]])
+          }
+          for (i = 0; i < u.length; i++) o(r.user, ["user", u[i]]);
+          setTimeout(function() {
+              var f = e.createElement("script"),
+                  d = e.getElementById("_webengage_script_tag");
+              f.type = "text/javascript", f.async = !0, f.src = ("https:" == e.location.protocol ? "https://ssl.widgets.webengage.com" : "https://cdn.widgets.webengage.com") + "/js/webengage-min-v-6.0.js", d.parentNode.insertBefore(f, d)
+          })
+      }
+  }(window, document, "webengage");
+  if (window.location.hostname == 'app.shiprocket.in') {
+        webengage.init('aa131c7a'); //replace the YOUR_WEBENGAGE_LICENSE_CODE with your WebEngage Account License Code
+        } else {
+        webengage.init('~10a5cb5a6'); //replace the YOUR_WEBENGAGE_LICENSE_CODE with your WebEngage Account License Code
+    }
+</script>
+<script>
+  function validate_email()
+  {
+    var x =document.myform.email.value;
+    var atposition=x.indexOf("@");
+    var dotposition=x.lastIndexOf(".");
+    if(atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length)
+      {
+        alert("Please enter a valid e-mail address \n atposition:"+atposition+
+        "\n dotposition:"+dotposition);
+        return false;
+      }
+
+  }
+</script>
+<body>
+  
+    <style>.card-registration .select-input.form-control[readonly]:not([disabled]) {
+        font-size: 1rem;
+        line-height: 2.15;
+        padding-left: .75em;
+        padding-right: .75em;
+        }
+        .card-registration .select-arrow {
+        top: 13px;
+        }
+        .h-160 bg-dark
+        {margin-top:190px;
+        }
+          </style>
+    <section class="h-160 bg-dark">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+              <div class="card card-registration my-4">
+                <div class="row g-0">
+                  <div class="col-xl-6 d-none d-xl-block">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                      alt="Sample photo" class="img-fluid"
+                      style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="card-body p-md-5 text-black">
+                      <h3 class="mb-5 text-uppercase">Student registration form</h3>
+                      <form action="/signup/" method="post" onsubmit="return validate_email();">
+                        {% csrf_token %}
+                        <div class="form-outline mb-4">
+                          <input type="text" id="username" name="username" placeholder="Enter Username" class="form-control form-control-lg" required/>
+                          <label class="form-label" for="form3Example1cg"></label>
+                          
+                        </div>
+        
+                        <div class="form-outline mb-4">
+                          <input type="text" id="first_name" name="first_name" placeholder="First Name" class="form-control form-control-lg" required/>
+                          <label class="form-label" for="form3Example3cg"></label>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                          <input type="text" id="last_name" name="last_name" placeholder="Last Name" class="form-control form-control-lg" />
+                          <label class="form-label" for="form3Example3cg"></label>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                          <input type="email" id="email" name="email" placeholder="Enter Email" class="form-control form-control-lg" required/>
+                          <label class="form-label" for="form3Example3cg"></label>
+                          
+                        </div>
+        
+                        <div class="form-outline mb-4">
+                          <input type="password" id="password" name= "password" placeholder="Password" class="form-control form-control-lg" required/>
+                          <label class="form-label" for="form3Example4cg"></label>
+                          
+                        
+                        </div>
+        
+                        <div class="form-outline mb-4">
+                          <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Your Password" class="form-control form-control-lg" />
+                          <label class="form-label" for="form3Example4cdg"></label>
+                          
+                        </div>
+        
+                        
+                        {% for i in messages %}
+                        <div class ="alert alert-danger">
+                            <p>{{i}}</p><br>
+                        </div>
+                        {% endfor %}
+                        <div class="d-flex justify-content-center">
+                          
+                          <button type="submit"
+                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                        </div>
+                      </form>
+        
+                        <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href=#
+                            class="fw-bold text-body"><u>Login here</u></a></p>
+        
+                      
+        
+      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+    
+    
+  
+  <!-- capcha v3 -->
+  
+  <script src="sr_login/runtime-es2015.d607c03269ad1a04a684.js" type="module"></script>
+  <script src="sr_login/runtime-es5.d607c03269ad1a04a684.js" nomodule="" defer="">
+
+  </script><script src="sr_login/polyfills-es5.f0e9051017517c87d71a.js" nomodule="" defer=""></script>
+  <script src="sr_login/polyfills-es2015.31f6ca27bdeededa956e.js" type="module"></script>
+  <script src="sr_login/scripts.c10c23ac9fbbd155ad28.js" defer=""></script>
+  <script src="sr_login/main-es2015.45e09dada8c390100d81.js" type="module"></script>
+  <script src="sr_login/main-es5.45e09dada8c390100d81.js" nomodule="" defer=""></script>
+  
+   <webengagedata><style type="text/css">#webklipper-publisher-widget-container, #webklipper-publisher-widget-container * {overflow:visible; -webkit-box-sizing: content-box; -moz-box-sizing: content-box;  box-sizing: content-box; margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}</style><div id="webklipper-publisher-widget-container">
+    <iframe title="webengage-engagement-callback-frame" name="webengage-engagement-callback-frame" id="webengage-engagement-callback-frame" frameborder="0" marginheight="0" marginwidth="0" style="position: absolute; background-color: transparent; bottom: 0px; right: 0px; border: none; overflow: hidden; visibility: hidden; display: none;"></iframe><iframe title="_we_wk_data_store" name="_we_wk_data_store" id="_we_wk_data_store" frameborder="0" marginheight="0" marginwidth="0" src="https://aa131c7a.webengage.co/storage-frame-1.18.htm?cdn=y&amp;cbf=webengage-engagement-callback-frame&amp;lc=aa131c7a" style="position: absolute; background-color: transparent; bottom: 0px; right: 0px; border: none; overflow: hidden; visibility: hidden; display: none;"></iframe><script type="text/javascript" charset="UTF-8" async="" src="https://wsdk-files.webengage.com/webengage/aa131c7a/3k9e730.js?r=1696403740000"></script><script type="text/javascript" charset="UTF-8" async="" src="https://wsdk-files.webengage.com/webengage/aa131c7a/i2l1l8i.js?r=1695356686000"></script><script type="text/javascript" charset="UTF-8" async="" src="https://wsdk-files.webengage.com/webengage/aa131c7a/3k9e769.js?r=1697603809000"></script><script type="text/javascript" charset="UTF-8" async="" src="https://wsdk-files.webengage.com/webengage/aa131c7a/3k9e6hk.js?r=1697603809000"></script><script type="text/javascript" charset="UTF-8" async="" src="https://wsdk-files.webengage.com/webengage/aa131c7a/~a61h766.js?r=1697603809000"></script><script type="text/javascript" charset="UTF-8" async="" src="https://wsdk-files.webengage.com/webengage/aa131c7a/8eda4c5.js?r=1697603809000"></script><script type="text/javascript" charset="UTF-8" async="" src="https://wsdk-files.webengage.com/webengage/aa131c7a/8eda4g4.js?r=1703231121000"></script><script type="text/javascript" charset="UTF-8" async="" src="https://wsdk-files.webengage.com/webengage/aa131c7a/~hg3c28.js?r=1703462778000"></script><script type="text/javascript" charset="UTF-8" async="" src="https://c.webengage.com/jcx.js?licenseCode=aa131c7a&amp;luid=20685a2dd5b1136861e1e121799e375c0f6917cf&amp;upfc=N4IgVglgJgziBcoAsAbATFA7FADAg2iAIwBOSAnALYAWAhiALoA0IAfgGwAcApgMy2cUBYgDNe7dgFZGAXxlAA%3D%3D&amp;jsonp=_we_jsonp_global_cb_1703502355836"></script><script type="text/javascript" charset="UTF-8" async="" src="https://c.webengage.com/jcx.js?licenseCode=aa131c7a&amp;luid=20685a2dd5b1136861e1e121799e375c0f6917cf&amp;upfc=N4IgVglgJgziBcoAsAbATFA7FADAg2iAIwBOSAnALYAWAhiALoA0IAfgGwAcApgMy2cUBYgDNe7dgFZGAXxlAA%3D%3D&amp;jsonp=_we_jsonp_global_cb_1703502764746"></script></div></webengagedata>
+  
+  <script type="text/javascript" id="">!function(d,e,f,a,b,c){d.qp||(a=d.qp=function(){a.qp?a.qp.apply(a,arguments):a.queue.push(arguments)},a.queue=[],b=document.createElement(e),b.async=!0,b.src=f,c=document.getElementsByTagName(e)[0],c.parentNode.insertBefore(b,c))}(window,"script","https://a.quora.com/qevents.js");qp("init","d61f67b75bb644e5a8cb101f36971453");qp("track","ViewContent");</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://q.quora.com/_/ad/d61f67b75bb644e5a8cb101f36971453/pixel?tag=ViewContent&amp;noscript=1"></noscript>
+  
+  <script type="text/javascript" id="">qp("track","CompleteRegistration");qp("track","Generic");</script>
+  <script type="text/javascript" id="">var userId=google_tag_manager["rm"]["9056945"](13)?google_tag_manager["rm"]["9056945"](14):"0";(function(a,e,b,f,g,c,d){a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)};c=e.createElement(f);c.async=1;c.src="https://www.clarity.ms/tag/"+g;d=e.getElementsByTagName(f)[0];d.parentNode.insertBefore(c,d);clarity("set","userId",userId.toString())})(window,document,"clarity","script","gmsn5pz9vi");</script><cs-native-frame-holder hidden=""></cs-native-frame-holder><div id="batBeacon913804217713" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img id="batBeacon174363542517" width="0" height="0" alt="" src="https://bat.bing.com/action/0?ti=355025906&amp;tm=gtm002&amp;Ver=2&amp;mid=d4932a40-af39-407f-b14f-8dbe148da4a1&amp;sid=a1d389d0a31311ee92351b085624cbc3&amp;vid=c42dacd09ff411eeab5a0b2f98670363&amp;vids=0&amp;msclkid=N&amp;uach=pv%3D14.0.0&amp;pi=918639831&amp;lg=en-US&amp;sw=1280&amp;sh=720&amp;sc=24&amp;tl=Shiprocket&amp;kw=app,%20responsive,%20angular,%20bootstrap,%20dashboard,%20admin&amp;p=https%3A%2F%2Fapp.shiprocket.in%2Fregister&amp;r=https%3A%2F%2Fwww.shiprocket.in%2F&amp;lt=156&amp;evt=pageLoad&amp;sv=1&amp;rn=237818" style="width: 0px; height: 0px; display: none; visibility: hidden;"></div><div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation" name="a-yn958ev8lwvo" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LcYFu0ZAAAAAHCXb0PpqlOnxps55UsDn5fAwswC&amp;co=aHR0cHM6Ly9hcHAuc2hpcHJvY2tldC5pbjo0NDM.&amp;hl=en&amp;v=u-xcq3POCWFlCr3x8_IPxgPu&amp;size=invisible&amp;cb=i92ecl82k3zy"></iframe>
+</div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
+
+<div id="batBeacon913804217713" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img id="batBeacon174363542517" width="0" height="0" alt="" src="https://bat.bing.com/action/0?ti=355025906&amp;tm=gtm002&amp;Ver=2&amp;mid=d4932a40-af39-407f-b14f-8dbe148da4a1&amp;sid=a1d389d0a31311ee92351b085624cbc3&amp;vid=c42dacd09ff411eeab5a0b2f98670363&amp;vids=0&amp;msclkid=N&amp;uach=pv%3D14.0.0&amp;pi=918639831&amp;lg=en-US&amp;sw=1280&amp;sh=720&amp;sc=24&amp;tl=Shiprocket&amp;kw=app,%20responsive,%20angular,%20bootstrap,%20dashboard,%20admin&amp;p=https%3A%2F%2Fapp.shiprocket.in%2Fregister&amp;r=https%3A%2F%2Fwww.shiprocket.in%2F&amp;lt=156&amp;evt=pageLoad&amp;sv=1&amp;rn=237818" style="width: 0px; height: 0px; display: none; visibility: hidden;"></div>
+<div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation" name="a-yn958ev8lwvo" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LcYFu0ZAAAAAHCXb0PpqlOnxps55UsDn5fAwswC&amp;co=aHR0cHM6Ly9hcHAuc2hpcHJvY2tldC5pbjo0NDM.&amp;hl=en&amp;v=u-xcq3POCWFlCr3x8_IPxgPu&amp;size=invisible&amp;cb=i92ecl82k3zy"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
+<!-- capcha v3 -->
+<script src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/themes/shiprocket/js/navigation.js?ver=1.0.3" id="shiprocket-custom-theme-navigation-js" defer></script>
+<script src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/themes/shiprocket/assets/js/vendor.min.js?ver=1.0.3" id="shiprocket-custom-theme-vendor-min-js" defer></script>
+
+<script src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/themes/shiprocket/assets/js/scripts.min.js?ver=1.0.3" id="shiprocket-custom-theme-scripts-min-js" defer></script>
+
+<script src="sr_login/runtime-es2015.d607c03269ad1a04a684.js" type="module"></script><script src="sr_login/runtime-es5.d607c03269ad1a04a684.js" nomodule defer></script><script src="sr_login/polyfills-es5.f0e9051017517c87d71a.js" nomodule defer></script><script src="sr_login/polyfills-es2015.31f6ca27bdeededa956e.js" type="module"></script><script src="sr_login/scripts.c10c23ac9fbbd155ad28.js" defer></script><script src="sr_login/main-es2015.45e09dada8c390100d81.js" type="module"></script><script src="sr_login/main-es5.45e09dada8c390100d81.js" nomodule defer></script></body>
+</html>
