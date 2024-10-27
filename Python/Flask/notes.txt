@@ -1,0 +1,2 @@
+To refresh flask app automatically
+1) flask --app example_app.py --debug run
